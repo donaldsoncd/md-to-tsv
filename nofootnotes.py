@@ -9,7 +9,7 @@ def stripFoots(text):
     noFoot = ""
 
     for char in text:
-        if char == '[': # If you hit [ then tell the computer you are inside a foonote
+        if char == '[': # If you hit [ then tell the computer you are inside a footnote
             outsideFoot = 0
         elif (outsideFoot == 0 and char == '\n'): # Otherwise if you are inside a footnote and you hit a new line then tell the computer that it is outside a footnote again
             outsideFoot = 1
