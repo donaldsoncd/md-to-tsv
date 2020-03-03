@@ -1,6 +1,6 @@
 # Markdown to Tab Separated Value
 
-I made this "program" to automate part of converting critical edition style text (Jula-English-Arabic plus footnotes for a partial oral interpretation of the Quran into Jula) written using pandoc flavored markdown into a tsv format useful for further analysis as a spreadsheet or data fed int a parallel corpus.
+I made this "program" to automate part of converting critical edition style text (Jula-English-Arabic plus footnotes for a partial oral interpretation of the Quran into Jula) written using pandoc flavored markdown into a tsv format useful for further analysis as a spreadsheet or data fed into a parallel corpus.
 
 ## How to use
 
