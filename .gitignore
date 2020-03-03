@@ -129,3 +129,6 @@ sample.md
 
 Ignore program output
 new-text.md
+
+Ignore .DS_Store
+.DS_Store
