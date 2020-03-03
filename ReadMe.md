@@ -15,11 +15,15 @@ Its main features are:
 
 ## Known Issues
 
+**More than one foonote**
 If your critical edition uses more than one footnote marker per line (e.g., `A line of text[^1] with two note markers[^2]`) than program will cut off the text following the first footnote marker.
 
 You can resolve this manually if you do not have too many lines with multiple footnotes or you can prepare your text beforehand.
 
 Alternatively, do not use more than one footnote per line.
+
+**Footnote within prose**
+If the foonote appears within the proose (e.g., `A line of text[^1] with a footnote in it`) than it will cut off everything after the foonote.
 
 ## What the original file looked like
 
@@ -51,4 +55,4 @@ _in hidden affairs_
 بِالْغَيْبِ
 
 [^cba3]: SS: religious things not seen such as heaven
-```    
+```
