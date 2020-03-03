@@ -31,7 +31,10 @@ file = removelines.noWhiteLines(file)
 file = file.replace('### ','')
 
 # Remove dividers
-file= file.replace('---\n','')
+file = file.replace('---\n','')
+
+# Remove underscores
+file = file.replace('_','')
 
 print(">>>>>>> Saving the cleaned up version")
 
