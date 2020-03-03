@@ -123,3 +123,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore sample.md which is the source text
+sample.md
+
+Ignore program output
+new-text.md
