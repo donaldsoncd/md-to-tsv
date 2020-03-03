@@ -1,11 +1,13 @@
-# How to use
+# Markdown to Tab Separated Value
+
+I made this "program" to automate part of converting critical edition style text (Jula-English-Arabic plus footnotes for a partial oral interpretation of the Quran into Jula) written using pandoc flavored markdown into a tsv format useful for further analysis as a spreadsheet or data fed int a parallel corpus.
+
+## How to use
 
 - Put your text into the file `sample.md`
 - Run `cleanup.py`
 
-
-
-# Known Issues
+## Known Issues
 
 If your critical edition uses more than one footnote marker per line (e.g., `A line of text[^1] with two note markers[^2]`) than program will cut off the text following the first footnote marker.
 
