@@ -2,7 +2,7 @@
 
 # A Python program to manipulate the Jula Sura 2 markdown to remove foonotes and put it into a tabular data form
 
-import readmd, nofootnotes
+import readmd, nofootnotes, removelines
 
 # Create a blank variable "file"
 print(">>>>>> Create a blank file")
@@ -21,9 +21,14 @@ print(">>>>>> Here are the first 100 characters of \"file:" + "\n" + file[0:100]
 print(">>>>>> Run the stripFoots function on \"file\"")
 file = nofootnotes.stripFoots(file)
 
-print(">>>>>> Here are the contents without foonotes:\n" + file)
+print(">>>>>> Here are the contents without footnotes:\n" + file[1:100])
 
-print(">>>>>>> Saving the cleaned up version without footnotes...")
+# Run noWhiteLines to remove blank lines
+
+print(">>>>>>> Removing whitelines in the file...")
+file = removelines.noWhiteLines(file)
+
+print(">>>>>>> Saving the cleaned up version without footnotes and blank lines...")
 
 f = open("new-text.md","w")
 f.write(file)
