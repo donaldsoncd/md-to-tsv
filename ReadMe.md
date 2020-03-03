@@ -2,6 +2,12 @@
 
 I made this "program" to automate part of converting critical edition style text (Jula-English-Arabic plus footnotes for a partial oral interpretation of the Quran into Jula) written using pandoc flavored markdown into a tsv format useful for further analysis as a spreadsheet or data fed into a parallel corpus.
 
+Its main features are:
+- Removing footnotes
+- Removing blank lines
+- Removing header markers (e.g., `### 3.1.1` --> `3.1.1`)
+- Removing line breaks (between Quranic verses
+
 ## How to use
 
 - Put your text into the file `sample.md`
