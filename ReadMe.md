@@ -21,31 +21,30 @@ How to use
 Markdown formatting specifications
 ----------------------------------
 
-   - Each translation unit must start with `###`. 
+- Each translation unit must start with `###`. 
 
-   - Source language and target language segments are separated by new lines
+- Source language and target language segments are separated by new lines. You can have as many target languages as you want. 
 
-   - Each translation unit must be have the same number of segments (that is, one for each language) in the same order.
+- Each translation unit must be have the same number of segments (that is, one for each language) in the same order.
 
-   - Footnotes can be placed at the end of a segment or within a segment (BUT see below for a note on RTL scripts)
+- Footnotes can be placed at the end of a segment or within a segment (BUT see below for a note on RTL scripts)
 
-   - You can place translation segments within underscores (e.g., `_bonjour_`; you may want this markup/formatting for other outputs such Word/LibreOffice docs or HTML files).
+- You can place translation segments within underscores (e.g., `_bonjour_`; you may want this markup/formatting for other outputs such Word/LibreOffice docs or HTML files). They will be stripped from the TSV output.
 
-     They will be stripped from the TSV output.
 
-   - So here's an example:
+Here's an example of a single translation unit of a text using Jula, English and Arabic:
 
-     ```
-     ### 4.2.2
-     
-     ka na ele[^862c] ma
-     
-     _and came to you_
-     
-     إِلَيْكَ
-     
-     [^862c]: This refers to Muhammad.
-     ```
+   ```
+   ### 4.2.2
+   
+   ka na ele[^862c] ma
+   
+   _and came to you_
+   
+   إِلَيْكَ
+   
+   [^862c]: This refers to Muhammad.
+   ```
 
 Special Notes for Ajami documents and right-to-left scripts such as Arabic
 --------------------------------------------------------------------------
