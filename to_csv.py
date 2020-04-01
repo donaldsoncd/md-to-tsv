@@ -146,8 +146,6 @@ with open(filename, 'r') as input_file:
         if header_match:
             # We've found a header so let's remember that
             found_first_header = True
-            # If the next line buffer has any content, write it cos we're done with that line
-            if len(next_line) > 0: write_line(output, next_line)
             # If we've seen each language, then we're ready for another header
             if current_language_index == len(languages):
                 # Because we've found a header, it's time to start a new line
@@ -183,6 +181,11 @@ with open(filename, 'r') as input_file:
             # if we're still looking for a language
             current_language_index += 1
 
+        # If we have seen all languages and
+        # the next_line buffer has any content
+        # write the line to output
+        if current_language_index == len(languages) and len(next_line) > 0:
+            write_line(output, next_line)
 
     # Try to save the file
     save_to_file(output, filename)
