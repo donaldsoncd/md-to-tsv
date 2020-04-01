@@ -1,7 +1,7 @@
 Markdown to Tab Separated Value
 ==============================
 
-A "program"/"script" to convert a trilingual critical edition style text (that is, a source text with translation into two languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
+A "program"/"script" to convert a critical edition translation text (that is, a source text with translation into one or more languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
 
 How to use
 ----------
@@ -27,23 +27,24 @@ Markdown formatting specifications
 
    - Source language and target language segments are separated by new lines
 
-   - Each translation unit must be have the same number of segments (that is, one for each language) in the same order. (In the above example, that would be English, French, Jula.)
+   - Each translation unit must be have the same number of segments (that is, one for each language) in the same order.
 
    - Footnotes can be placed at the end of a segment or within a segment (BUT see below for a note on RTL scripts)
+
+   - You can place place translation
 
    - For instance:
 
      ```
-     ### 1
+     ### 4.2.2
      
-     Hello[^1], this line is in English.[^2]
+     ka na ele[^862c] ma
      
-     Bonjour, cette ligne est en français.
+     _and came to you_
      
-     I ni ce, nin haya bɛ julakan na.
+     إِلَيْكَ
      
-     [^1]: It is interesting that blah blah.
-     [^2]: It is worth noting that blah blah.
+     [^862c]: This refers to Muhammad.
      ```
 
 Special Notes for Ajami documents and right-to-left scripts such as Arabic
