@@ -3,6 +3,12 @@ Markdown to Tab Separated Value
 
 A "program"/"script" to convert a critical edition translation text (that is, a source text with translation into one or more languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
 
+So from this:
+<img width="791" alt="markdown input" src="https://user-images.githubusercontent.com/6858318/78091543-61b2a480-738a-11ea-90eb-0b6323ae83ae.png">
+
+To this:
+<img width="698" alt="tsv output" src="https://user-images.githubusercontent.com/6858318/78091554-68411c00-738a-11ea-8e4a-d81fb4b29e1c.png">
+
 How to use
 ----------
 
