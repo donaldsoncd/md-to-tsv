@@ -171,8 +171,10 @@ with open(filename, 'r') as input_file:
             error("Expected a header but found a translation at line: " + str(line_number))
         # If we get here then we're ready to add a language entry to the line
         else:
-            # First we remove all white space, then leading and trailing underscores
-            processed_line = line.strip().strip('_')
+            # First we remove all white space
+            processed_line = line.strip()
+            # Then remove all markdown formatting
+            processed_line = re.sub('[_`*]', '', processed_line)
             # Then we remove all footnote entries
             processed_line = re.sub('\[\^.*\]', '', processed_line)
             # Then we add it to the new line
