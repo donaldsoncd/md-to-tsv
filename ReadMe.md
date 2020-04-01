@@ -1,58 +1,52 @@
-# Markdown to Tab Separated Value
+Markdown to Tab Separated Value
+==============================
 
-I made this "program" to automate part of converting critical edition style text (Jula-English-Arabic plus footnotes for a partial oral interpretation of the Quran into Jula) written using pandoc flavored markdown into a tsv format useful for further analysis as a spreadsheet or data fed into a parallel corpus.
+A "program"/"script" to convert a trilingual critical edition style text (that is, a source text with translation into two languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
 
-Its main features are:
-- Removing footnotes
-- Removing blank lines
-- Removing header markers (e.g., `### 3.1.1` --> `3.1.1`)
-- Removing line breaks (between Quranic verses
+How to use
+-----------------
 
-## How to use
+Usage:
 
-- Put your text into the file `sample.md`
-- Run `cleanup.py`
+- Download the python script `to-csv.py`
 
-## Known Issues
+- Place it the folder along with the annotated text markdown file that you would like to convert to an un-annotated TSV
 
-**More than one foonote**
-If your critical edition uses more than one footnote marker per line (e.g., `A line of text[^1] with two note markers[^2]`) than program will cut off the text following the first footnote marker.
+- Open your terminal and navigate to the folder where the script and your file are
 
-You can resolve this manually if you do not have too many lines with multiple footnotes or you can prepare your text beforehand.
+- Run the script by typing in `python to-csv.py` PLUS a list of the languages (e.g., `Jula English Arabic`) with each language separated by a space PLUS the name of your file.
 
-Alternatively, do not use more than one footnote per line.
+  All together, this means you type something like this, for example:
+  
+  `python to_csv.py Jula English Arabic text.md`
 
-**Footnote within prose**
-If the foonote appears within the proose (e.g., `A line of text[^1] with a footnote in it`) than it will cut off everything after the foonote.
+Markdown formatting specifications
+--------------------------------------------------------
 
-## What the original file looked like
+   - Each translation unit must start with `###`. 
 
-The program assumes that you are producing a trilingual version such as the following:
+   - Source language and target language segments are separated by new lines
 
-```
-### 3.1.1
+   - Each translation unit must be have the same number of segments (that is, one for each language) in the same order. (In the above example, that would be English, French, Jula.)
 
-Mɔgɔ minnu
+   - Footnotes can be placed at the end of a segment or within a segment (BUT see below for a note on RTL scripts)
 
-_Those people who_
+   - For instance:
 
-الَّذِينَ
+     ```
+     ### 1
+     
+     Hello[^1], this line is in English.[^2]
+     
+     Bonjour, cette ligne est en français.
+     
+     I ni ce, nin haya bɛ julakan na.
+     
+     [^1]: It is interesting that blah blah.
+     [^2]: It is worth noting that blah blah.
+     ```
 
-### 3.1.2
+Special Notes for Ajami documents and right-to-left scripts such as Arabic
+-------------
 
-olu limaniyara
-
-_believe_
-
-يُؤْمِنُونَ
-
-### 3.2
-
-ni ko dogonin ye[^cba3]
-
-_in hidden affairs_
-
-بِالْغَيْبِ
-
-[^cba3]: SS: religious things not seen such as heaven
-```
+- Do not place footnotes on any lines written in Arabic script (or a right-to-left script segment, in general) since the mixing of LTR and RTL doesn't work nicely
