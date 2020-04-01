@@ -14,8 +14,6 @@ To this:
 How to use
 ----------
 
-Usage:
-
 - Download the python script `to-csv.py`
 
 - Place it the folder along with the annotated text markdown file that you would like to convert to an un-annotated TSV
