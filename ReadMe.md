@@ -31,9 +31,11 @@ Markdown formatting specifications
 
    - Footnotes can be placed at the end of a segment or within a segment (BUT see below for a note on RTL scripts)
 
-   - You can place place translation
+   - You can place translation segments within underscores (e.g., `_bonjour_`; you may want this markup/formatting for other outputs such Word/LibreOffice docs or HTML files).
 
-   - For instance:
+     They will be stripped from the TSV output.
+
+   - So here's an example:
 
      ```
      ### 4.2.2
