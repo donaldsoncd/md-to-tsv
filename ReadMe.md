@@ -4,17 +4,17 @@ A "program"/"script" to convert a critical edition translation text (that is, a 
 
 ## How to use
 
-- Download the python script `to-csv.py`
+- Download the python script `to-tsv.py`
 
 - Place it in the folder along with the annotated text markdown file that you would like to convert to an un-annotated TSV
 
 - Open your terminal and navigate to the folder where the script and your file are
 
-- Run the script by typing in `python to-csv.py` PLUS a list of the languages (e.g., `Jula English Arabic`) with each language separated by a space PLUS the name of your file.
+- Run the script by typing in `python to-tsv.py` PLUS a list of the languages (e.g., `Jula English Arabic`) with each language separated by a space PLUS the name of your file.
 
   All together, this means you type something like this, for example:
   
-  `python to_csv.py Jula English Arabic text.md`
+  `python to_tsv.py Jula English Arabic text.md`
 
 ## Markdown formatting specifications
 
