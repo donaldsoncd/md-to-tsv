@@ -49,6 +49,12 @@ Here's an example of a single translation unit of a text using Jula, English and
 
 - Do not place footnotes on any lines written in Arabic script (or a right-to-left script segment, in general) since the mixing of LTR and RTL doesn't work nicely
 
+## Ajami Lab Use
+
+This program was originally written to facilitate an Ajami Lab research workflow where I digitized a hand-written notebook from lessons in Jula-language Quranic exegesis that I took. It could be useful for others working from a similar context of handwritten notes.
+
+For working from digital manuscripts, it is likely better to start with [Tropy](https://tropy.org/) in the worfklow discussed here and then use [tsv-to-md](https://github.com/donaldsoncd/tsv-to-md) instead of this program.
+
 ## Screenshots
 
 Go from this:
