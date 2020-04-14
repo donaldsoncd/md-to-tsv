@@ -105,7 +105,7 @@ def do_write_file(contents, output_filename):
 #
 ########
 
-# Create buffer for input
+# Create buffer for output
 output = ""
 
 # Store which line number we're working on for good error reporting
@@ -126,53 +126,47 @@ with open(filename, 'r') as inputFile:
     # Loop through the lines
     for line in inputFile:
         
+        # Increment the current line number for error reporting    
         line_number += 1
+        
         # Ignore the first line since it is the TSV headers
         if line_number == 1:
             continue
-        
-        # Increment the current line number for error reporting    
-        
+                
         # Otherwise process the lines
         else:
-            print("Working on line " + str(line_number))
             
             # Loop through the characters of a line
             for char in line:
+                
                 # If we are in the id column and it has no markdown pounds
                 if (isID == 1 and hasPounds == 0):
-                    print("Adding pound signs for markdown header")
-                    # Write the initial markdown header syntax
+                    # Write the initial markdown header syntax and the character
                     output += "### "
                     output += char
-                    # Mark that we have written the pound symbols
+                    # Mark that we have written the pound signs
                     hasPounds = 1
-                    
-                # If we hit a tab and are in the ID column
-                elif (hasPounds == 1 and char == "\t" and isID == 1):
-                    print("I hit a tab after an ID and am skipping two lines down")
-                    # Skip down two lines
-                    output += "\n\n"
-                    # And note that we are no longer in the ID column
-                    isID = 0
                 
-                # If we are in the id column and it HAS markdown pounds
+                # If we are in the ID column and it has markdown pounds
                 elif (isID == 1 and hasPounds == 1):
-                    print("I am writing the ID")
                     # Write out the character
                     output += char
-                    
-                # If we hit a tab and are not in the ID column
+                
+                # If we hit a tab and are in the ID column after having written the pounds
+                elif (hasPounds == 1 and char == "\t" and isID == 1):
+                    # Skip down two lines and note we're no longer in ID column
+                    output += "\n\n"
+                    isID = 0
+                
+                # If we hit a tab and are NOT in the ID column
                 elif (char == "\t" and isID == 0):
-                    print("I hit a tab and am skipping two lines down")
                     # Skip down two lines
                     output += "\n\n"
                     isID = 0
                     
-                # If we hit a new line and are not in the ID column
+                # If we hit the end of a row and are not in the ID column
                 elif (char == "\n" and isID == 0):
-                    print("I hit the end of a row")
-                    # Skip down two line and add a markdown header marker
+                    # Skip down two lines
                     output += "\n\n"
                     # Mark that we are now in the ID column and that it has no poundsigns
                     isID = 1
