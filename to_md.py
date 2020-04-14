@@ -27,7 +27,6 @@ input file notes:
 outout file notes:
     - Identifiers become markdown headers via three hashtag marks
     - Language segments become markdown paragraphs
-
 """
 
 import os, re, sys
@@ -37,6 +36,7 @@ import os, re, sys
 # Check if we are running at least Python 3, if not exit with an error
 #
 #####
+
 if sys.version_info[0] < 3:
     raise Exception("Python 3 or a more recent version is required.")
 
@@ -90,9 +90,9 @@ def save_to_file(data, input_filename):
       # If the file doesn't already exist then write the file
       do_write_file(contents, output_filename)
 
-##
+#####
 # File writing
-##
+#####
 
 def do_write_file(contents, output_filename):
     with open(output_filename, 'w') as file:
@@ -116,9 +116,6 @@ isID = 1
 
 # Store whether the markdown file has poundsigns for identifier as a header
 hasPounds = 0
-
-# Let user know which file we are working on
-print ("Working on file " + filename)
 
 # Open the file for reading
 with open(filename, 'r') as inputFile:
@@ -177,5 +174,3 @@ with open(filename, 'r') as inputFile:
                     
     # Try to save the file
     save_to_file(output, filename)
-                
-# Save the file
