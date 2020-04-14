@@ -1,6 +1,8 @@
 # Markdown to Tab Separated Value
 
-A "program"/"script" to convert a critical edition translation text (that is, a source text with translation into one or multiple languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
+A python program to convert a critical edition translation text (that is, a source text with translation into one or multiple languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
+
+It is the counterpart to [tsv-to-md](https://github.com/donaldsoncd/tsv-to-md), which converts in the opposite direction.
 
 ## How to use
 
