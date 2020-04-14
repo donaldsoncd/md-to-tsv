@@ -1,10 +1,8 @@
-Markdown to Tab Separated Value
-==============================
+# Markdown to Tab Separated Value
 
 A "program"/"script" to convert a critical edition translation text (that is, a source text with translation into one or multiple languages plus annotations/commentary in the form of footnotes) from a plain-text file written using [pandoc](https://pandoc.org/) flavored markdown into an un-annotated tsv useful for further analysis with other software.
 
-How to use
-----------
+## How to use
 
 - Download the python script `to-csv.py`
 
@@ -18,8 +16,7 @@ How to use
   
   `python to_csv.py Jula English Arabic text.md`
 
-Markdown formatting specifications
-----------------------------------
+## Markdown formatting specifications
 
 - Each translation unit must start with `###`. 
 
@@ -46,14 +43,11 @@ Here's an example of a single translation unit of a text using Jula, English and
    [^862c]: This refers to Muhammad.
    ```
 
-Special Notes for Ajami documents and right-to-left scripts such as Arabic
---------------------------------------------------------------------------
+## Special Notes for Ajami documents and right-to-left scripts such as Arabic
 
 - Do not place footnotes on any lines written in Arabic script (or a right-to-left script segment, in general) since the mixing of LTR and RTL doesn't work nicely
 
-Screenshots
------------
-
+## Screenshots
 
 Go from this:
 
