@@ -6,7 +6,7 @@ A "program"/"script" to convert a critical edition translation text (that is, a 
 
 - Download the python script `to-csv.py`
 
-- Place it the folder along with the annotated text markdown file that you would like to convert to an un-annotated TSV
+- Place it in the folder along with the annotated text markdown file that you would like to convert to an un-annotated TSV
 
 - Open your terminal and navigate to the folder where the script and your file are
 
