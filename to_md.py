@@ -1,9 +1,36 @@
 #!/usr/bin/env python3
 
-# A script to convert from a tsv of source language and target language translations
+# to_md.py
 
-# Djibril's standard when exported from Tropy looks like this:
+###############
+# A script to convert from a tsv of source language
+# and target language translations
+#
+# Written by Coleman Donaldson for the 
+# [Ajami Lab](https://www.manuscript-cultures.uni-hamburg.de/ajami/index_e.html)
+#
+# The main use of this script is to convert a TSV file
+# [exported from a Tropy project](https://zenodo.org/record/2581225)
+# into a plain text prose format
+# using the conventions of
+# [Markdown](https://daringfireball.net/projects/markdown/)
+#
+# Once in plain text markdown, you can use Pandoc flavored markdown to
+# write a critical edition style text with footnotes etc., for publications
+#
+##############
+
+
+#########################
+# FUTURE FEATURES TO ADD:
+# 
+# The ability to change [Ajami Lab Tropy text conventions](https://zenodo.org/record/2581217)
+# to basic markdown formatting (for italics and code) that is useful for publication
+# 
+# For future reference, this standard is as follows:
 # Arabic	Ajami	<Transliteration in angle brackets>	Phonemic	‘Transliteration in smart single quotes’
+#
+#########################
 
 help_text = """
 Convert a tsv file of source language segments and corresponding
@@ -21,8 +48,8 @@ Usage:
 
 input file notes:
     - The input file must be a tab-separated value file
-    - Each column must have a header
-    - The first column must be identifiers
+    - The first row must be a series of headers
+    - The first column must be identifiers for the segments
 
 outout file notes:
     - Identifiers become markdown headers via three hashtag marks
