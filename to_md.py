@@ -136,11 +136,18 @@ with open(filename, 'r') as inputFile:
             for char in line:
                 # If we are in the id column and it has no markdown pounds
                 if (isID == 1 and hasPounds == 0):                    
-                    # Write the initial markdown header syntax and character
+                    # Write the initial markdown header syntax
                     output += "### "
-                    output += char
                     # Mark that we have written the pound symbols
                     hasPounds = 1
+                    
+                # If we hit a tab and are in the ID column
+                elif (hasPounds == 1 and char == "\t" and isID == 1):
+                    print("I hit a tab")
+                    # Skip down two lines
+                    output += "\n\n"
+                    # And note that we are no longer in the ID column
+                    isID = 0
                 
                 # If we are in the id column and it HAS markdown pounds
                 elif (isID == 1 and hasPounds == 1):
@@ -153,27 +160,30 @@ with open(filename, 'r') as inputFile:
                     print("I hit a tab")
                     # Skip down two lines
                     output += "\n\n"
-                    output += char
                     # And note that we are no longer in the ID column
                     isID = 0
+                    
+                # If we hit a tab and are not in the ID column
+                elif (char == "\t" and isID == 0):
+                    # Skip down two lines
+                    output += "\n\n"
                 
                 # If we hit a tab and are not in the ID column
                 elif (char == "\t" and isID == 0):
                     # Skip down two lines
                     output += "\n\n"
                     output += char
-            
+                    
                 # If we hit a new line and are not in the ID column
                 elif (char == "\n" and isID == 0):
                     # Skip down two line and add a markdown header marker
-                    output += "\n\n### "
+                    output += "\n\n"
                     # Mark that we are now looking at the ID column again
                     isID = 1
             
                 # Otherwise write the characters to output
                 else:
                     output += char
-                    print(output)
                     
     # Try to save the file
     save_to_file(output, filename)
