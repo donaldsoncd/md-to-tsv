@@ -7,7 +7,7 @@ Convert from markdown to a tsv of translations.
 
 Usage:
 
-    to_csv [language_name...] filename
+    to_tsv [language_name...] filename
 
     language_name: a space separated list of languages where each value
                    represents language of translation
